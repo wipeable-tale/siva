@@ -5,16 +5,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
-import { HttpClientComponent } from './http-client/http-client.component';
-import { HttpServiceComponent } from './core/http-service/http-service.component'
+
+import {HttpClientComponent} from './feature/http-client/http-client.component';
+import {HttpClientService} from './core/http-client.service';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HttpClientComponent,
-    HttpServiceComponent
-  
+    HttpClientComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +21,7 @@ import { HttpServiceComponent } from './core/http-service/http-service.component
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [HttpClientService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
